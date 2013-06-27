@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>{{ title }}</title>
+    {{#css_hljs_theme}}
+    <link rel="stylesheet" type="text/css" href="{{{ css_hljs_theme }}}" />
+    {{/css_hljs_theme}}
+    {{#css_link}}
+    <link rel="stylesheet" type="text/css" href="{{{ css_link }}}" />
+    {{/css_link}}
+    {{#css_inline}}
+    <style type="text/css">
+{{{ css_inline }}}
+    </style>
+    {{/css_inline}}
+</head>
+<body>
+{{{ content }}}
+</body>
+</html>

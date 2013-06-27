@@ -1,0 +1,31 @@
+{
+  "name": "marked-html",
+  "version": "0.0.1",
+  "preferGlobal": true,
+  "description": "Renders Markdown as full HTML pages using marked, mustache, and highlight.js.",
+  "license": "MIT",
+  "author": {
+    "name": "Peter Parente",
+    "email": "parente@cs.unc.edu"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/parente/marked-html.git"
+  },
+  "bin": {
+    "marked-html": "./bin/marked-html"
+  },
+  "keywords": [
+    "markdown",
+    "html",
+    "cli"
+  ],
+  "dependencies": {
+    "mustache": "0.7.x",
+    "marked": "0.2.x",
+    "optimist": "0.6.x",
+    "highlight.js": "7.3.x"
+  },
+  "devDependencies": {
+  }
+}
