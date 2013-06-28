@@ -15,6 +15,10 @@
   "bin": {
     "marked-html": "./bin/marked-html"
   },
+  "main": "./lib/marked-html",
+  "scripts": {
+    "test" : "mocha test -R spec"
+  },
   "keywords": [
     "markdown",
     "html",
@@ -27,5 +31,7 @@
     "highlight.js": "7.3.x"
   },
   "devDependencies": {
+    "mocha": "1.11.x",
+    "should": "1.2.x"
   }
 }
