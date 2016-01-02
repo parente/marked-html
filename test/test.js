@@ -1,14 +1,15 @@
 var should = require('should'),
     fs = require('fs'),
     path = require('path'),
+    os = require('os'),
     mh = require('../lib/marked-html'),
     spawn = require('child_process').spawn;
 
-var md_fn = __dirname+'/test.md';
+var md_fn = path.join(__dirname, 'test.md');
 var md = fs.readFileSync(md_fn, 'utf-8');
 
 describe('render', function() {
-    var template = fs.readFileSync(__dirname+'/../template/default.mustache', 'utf-8');
+    var template = fs.readFileSync(path.join(__dirname, '..', 'template', 'default.mustache'), 'utf-8');
 
     it('should output html', function() {
         var rv = mh.render(md, template, {});
@@ -28,7 +29,7 @@ describe('render', function() {
         rv.should.not.match(/<style/ig);
     });
     it('should have embedded css', function() {
-        var args = {css_inline: __dirname+'/../template/default.css'};
+        var args = {css_inline: path.join(__dirname, '..', 'template', 'default.css')};
         var rv = mh.render(md, template, args);
         rv.should.not.match(/<link/ig);
         rv.should.match(/<style/ig);
@@ -41,11 +42,12 @@ describe('render', function() {
 });
 
 describe('run', function() {
-    var bin = __dirname+'/../bin/marked-html',
-        expected_length = 6141;
+    var bin = path.join(__dirname, '..', 'bin', 'marked-html'),
+        expected_length = 6346,
+        tempdir = os.tmpdir();
     it('should read a md file, write html to stdout', function(done) {
         var output = '';
-        var c = spawn(bin, ['-i', md_fn]);
+        var c = spawn('node', [bin, '-i', md_fn]);
         c.stdout.setEncoding('utf8');
         c.stdout.on('data', function(data) {
             output += data;
@@ -57,8 +59,8 @@ describe('run', function() {
         });
     });
     it('should read a md file, write a html file', function(done) {
-        var output = '/tmp/test.html';
-        var c = spawn(bin, ['-i', md_fn, '-o', output]);
+        var output = path.join(tempdir, 'test.html');
+        var c = spawn('node', [bin, '-i', md_fn, '-o', output]);
         c.on('close', function(code) {
             code.should.equal(0);
             output = fs.readFileSync(output, 'utf-8');
@@ -68,7 +70,7 @@ describe('run', function() {
     });
     it('should read md from stdin, write html to stdout', function(done) {
         var output = '';
-        var c = spawn(bin);
+        var c = spawn('node', [bin]);
         c.stdout.setEncoding('utf8');
         c.stdout.on('data', function(data) {
             output += data;
@@ -83,8 +85,8 @@ describe('run', function() {
         c.stdin.end();
     });
     it('should read md from stdin, write a html file', function(done) {
-        var output = '/tmp/test.html';
-        var c = spawn(bin, ['-o', output]);
+        var output = path.join(tempdir, 'test.html');
+        var c = spawn('node', [bin, '-o', output]);
         c.on('close', function(code) {
             code.should.equal(0);
             output = fs.readFileSync(output, 'utf-8');
@@ -97,7 +99,7 @@ describe('run', function() {
     });
     it('should show help', function(done) {
         var output = '';
-        var c = spawn(bin, ['-h']);
+        var c = spawn('node', [bin, '-h']);
         c.stderr.on('data', function(data) {
             output += data;
         });
