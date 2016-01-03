@@ -13,7 +13,7 @@ describe('render', function() {
 
     it('should output html', function() {
         var rv = mh.render(md, template, {});
-        rv.should.be.a('string');
+        rv.should.be.type('string');
         rv.should.match(/doctype html/ig);
         rv.should.match(/<title><\/title>/ig);
     });
@@ -43,7 +43,7 @@ describe('render', function() {
 
 describe('run', function() {
     var bin = path.join(__dirname, '..', 'bin', 'marked-html'),
-        expected_length = 6346,
+        expected_length = 6479,
         tempdir = os.tmpdir();
     it('should read a md file, write html to stdout', function(done) {
         var output = '';

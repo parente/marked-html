@@ -43,6 +43,12 @@ def spam(eggs):
     return not eggs
 ```
 
+## Indented block
+
+This is an indented block
+
+    Indented block
+
 ## Blockquotes
 
 > "He once said something." - Him
