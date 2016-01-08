@@ -93,8 +93,8 @@ code {
   border: 1px solid #efefef;
 }
 
-pre {
-  font-family: "Menlo", monospace;
+pre code {
+  display: block;
   background-color: #fff;
   padding: 0.5em;
   line-height: 1.25em;
@@ -106,13 +106,9 @@ pre {
   box-shadow: 0 1px 3px 0 #eee;
 }
 
-pre code {
-  background-color: transparent;
-  border-width: 0;
-}
-
 blockquote {
-  border-top: 1px solid #efefef;
+  padding: 0.5em;
+  border: 1px solid #efefef;
   border-bottom: 1px solid #ddd;
   -webkit-box-shadow: 0 1px 3px 0 #eee;
   -moz-box-shadow: 0 1px 3px 0 #eee;

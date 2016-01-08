@@ -17,7 +17,7 @@
   },
   "main": "./lib/marked-html",
   "scripts": {
-    "test" : "mocha test -R spec"
+    "test": "mocha test -R spec"
   },
   "keywords": [
     "markdown",
@@ -25,13 +25,13 @@
     "cli"
   ],
   "dependencies": {
-    "mustache": "0.7.x",
-    "marked": "0.2.x",
+    "mustache": "2.2.x",
+    "marked": "0.3.x",
     "optimist": "0.6.x",
-    "highlight.js": "7.3.x"
+    "highlight.js": "9.0.x"
   },
   "devDependencies": {
-    "mocha": "1.11.x",
-    "should": "1.2.x"
+    "mocha": "2.3.x",
+    "should": "8.0.x"
   }
 }
