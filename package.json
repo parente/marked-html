@@ -1,6 +1,6 @@
 {
   "name": "marked-html",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "preferGlobal": true,
   "description": "Renders Markdown as full HTML pages using marked, mustache, and highlight.js.",
   "license": "MIT",
