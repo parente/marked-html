@@ -28,7 +28,7 @@
     "mustache": "2.2.x",
     "marked": "0.3.x",
     "optimist": "0.6.x",
-    "highlight.js": "9.0.x"
+    "highlight.js": "9.7.x"
   },
   "devDependencies": {
     "mocha": "2.3.x",
