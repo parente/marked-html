@@ -1,6 +1,6 @@
 {
   "name": "marked-html",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "preferGlobal": true,
   "description": "Renders Markdown as full HTML pages using marked, mustache, and highlight.js.",
   "license": "MIT",
@@ -25,13 +25,13 @@
     "cli"
   ],
   "dependencies": {
-    "mustache": "2.2.x",
+    "mustache": "2.3.x",
     "marked": "0.3.x",
     "optimist": "0.6.x",
-    "highlight.js": "9.7.x"
+    "highlight.js": "9.12.x"
   },
   "devDependencies": {
-    "mocha": "2.3.x",
-    "should": "8.0.x"
+    "mocha": "5.1.x",
+    "should": "13.2.x"
   }
 }
