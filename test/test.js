@@ -43,7 +43,7 @@ describe('render', function() {
 
 describe('run', function() {
     var bin = path.join(__dirname, '..', 'bin', 'marked-html'),
-        expected_length = 6479,
+        expected_length = 6481,
         tempdir = os.tmpdir();
     it('should read a md file, write html to stdout', function(done) {
         var output = '';
